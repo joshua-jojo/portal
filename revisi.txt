@@ -1,0 +1,62 @@
+ngelag banget gan. iya ya. maybe jaringan saya kak. kalo pas deket jam 12 memang suka gitu. hahah
+-- revisi
+-untuk nilai tugas online bisa gk ambil 2 dibelakang koma? //ok
+
+-user siswa waktu cetak nilai gak semua pelajaran masuk //ok
+
+-user guru, siswa, kepsek gak bisa download soal uts dan uas dan jawaban ujian siswa pada halaman ujian //--guru=belum --siswa=ok --kepsek=belum --[saya lupa letak gabisanya dimana?]
+yang di halaman data ujian dan halaman jawaban siswa wait kak saya benerin dulu. coba test kak ok skalian tes kepsek dan siswa ya bntr
+guru masih bermalasah. itu tadi saya bingung kak masalahnya dimanapas saya coba berhasil jadi saya hapus aja filenya tapi tetep berhasil. itu gitu karena filnya udah saya hapus, oh jadi awalnya emang udh jalan ya?
+
+-user guru di halaman jawaban tugas siswa kolom tanggal upload masih error // ok 
+
+-user kepsek waktu cetak nilai masih error nilainya gak keluar //ok
+
+-perbaiki user siswa pas selesai upload jawaban dilempar keluar halaman//ok
+
+-perbaiki penomoran tugas user siswa//ok
+
+yang filenya ga ketemu tadi dimana kak? di guru klau g slh
+
+gan bisa bantu perbaiki admin ini gk ya? bisa saya cek dulu. gimana kakk, ok thx sy cek dlu ya
+
+gan yang ini tombol lihat jadwaban siswa hilang gan knepa ya tpi yg lain muncul yang mana kak?
+yang sosiologi kelas ips 3 hilang tapi sosio kelas ips 2 muncul gan tombolnya. kan kakak yang buat? harusnya kalo kakak mau muncul kan kakak buat code nya. mksdnya gmn ya?
+ iya juga ya kok bias gaada. tambah biaya gk ya? bentar saya cek dulu. siapa tau ini dari databasenya. ini relasinya sih. coba kakak cek lagi benerga ada yang ngerjain. mksdnya ad yg ngerjain apa ya?
+ jadi dia kan bakal nampilin tugas yang dikerjain kan kak. nah ini kan 
+ kode_pelajaran=3&kode_kelas=3
+ dia belajarnya kan sosiologi dengan id 3 nah sekarang kita cek yang ngerjainnnya cumen kelas yang id nya 2
+ karena datanya kosong jadi dia mabil logika yang ini
+ paham ga kak? ok berarti yg salah di databasenya itu relasinya? nah saya ga tau. ini memang prosedurnya gitu atau relasinya yang salah.kalau minta diperbaiki kira2 brp? nambah 15k kak ok bisa gk sekalian yang ini juga? yang ini gan maksudnya, berarti ud solve?
+ dimana tadi kak? admin jadwal tugas punya kepsek
+ yang kepsek sesuai kan kak. iya, gan tapi yg jadwal ini yg masalah kelas id 3 itu di saya muncul gan tombolnya. kalo gitu coba kita restore databasenya
+ muncul kan? wkwk berarti masalah di db ya. iya kak. makanya aku coba cari solusinya daripada baikin yang belum tentu pati salah. oke itu kira2 slsai kpn gan? itu kan dah selesai kak di atas
+ ga kak karena itu bukan kesalahan dan saya tidak memperbaiki itu ga makan biaya. jadi 15k kan ya itu? kira2 kelarnya kapan ya?
+ coba kakak sekarang buat tugas lagi. kita ga tau nih masalahnya di relasi atau datanya ga sesuai prosedur. jadi kita ga bisa menyimpulkan kalo relasinya yang salah. karena pas kita restore database nya itu berhasil. ok bntr
+
+ sbntr gan yang admin ini error download jawaban siswa karena db nya udh keapus kan ya ?. seharusnya itu errornya karena file yang di cari tidak berada pada folder yang tepat.
+ btw saya hanya mengerjakan yang ini user guru, siswa, kepsek, gk ngaruh ke restore db nya gan? coba kita cek
+ yang mana tadiu kak >ujian halaman jawaban ujian siswa gmn gan jadinya td? belum saya kerjain keburu mati teamviewernya. wait.
+ gimana? yang saya bingung knepa pas sblm restore itu fturnya jalan ya? fitur yang mana kak?yang admin download jawaban ujian siswa. itu maybe gara gara filenya numpuk dan kebetulan namanya sama.
+ yang kemarin bahas ya yang 150k itu?itu nampaknya bisa saya kerjakan minggu minggu ini. bukan. mksd saya yg 150k itu kyk permasalahan ini juga? selagi itu menyangkut soal file mau apapun fiturnya kalo selagi dia berhubungan sama file pasti . berarti yg saya tangkap bener ya masalah ini juga akan ke solve juga? seharusnya. tapi kita gabisa liat dari segitu itu juga. ada beberapa aspek yang buat berpengaruh. seperti cache atau file yang numpuk maupun relasi tabel. jadi itu harus di cek satu satu kak., kalau mnrt agan yg td sblm restore bisa download tpi stlh restore malah eror itu permasalahannya kira2 dmn? keliatan nya sih di relasinya. ataupun databsenya. soalnya sebelumnya ada beberapa file uas/uts/tugas yang saya hapus. karena saya jujur bingung banget liat file yang namanya kembar. i see ok
+ kak coba cari dimana fitur yang liat jawaban ivana ga ketemu. 
+ nah kan kalo beda keliatan kak letak filenya dimana. jadi perlu perbaikan dalam filenya ya. iya kak itu letaknya di penguploadan tugas. btw itu salahnya di siswa.
+ login sebaggai siswa kak.
+ gimana kak? berarti jgn2 ini juga ngaruh ke ujian ya mkny gbs td. iya kak. berarti maslah di letak filenya ya pas upload beda trus pad mau donlodnya juga beda. iya kak dan jangan lupa nama file juga ngaruh. berarti klw perbaiki kena brp untuk semua yang menyangkut file itu totalnya 150k. masalah salah file ini sama yg hash kmrn ya? 150 iya kak. ok deal kira2 kpn kelar? kalo itu saya liat jadwal dulu. paling cepet 3-4 hari soalnya sembari kak. oke ini oke, saya cek yg lain dlu ya
+
+ kakak gausah repot repot cari 11 di atas kan ada listnya.
+ gan saya baru nyadar di user admin waktu liat jawaban siswa sidebarnya berubah. berubah gimana?
+ haha iya kok bisa. saya juga baru sadar. kira2 perbaikinya bsa gan? bisa kak. tambah biaya gk ya?tambah kak. btw lebih baik kakak list aja kalo mau revisi biar saya ga kerja 2 kali.
+
+ -revisi
+ *user admin waktu lihat jawaban siswa sidebarnya berubah 5k
+ *user admin perbaiki sidebar waktu lihat jawaban tugas siswa sidebarnya berubah
+ *perbaiki permasalahan file semua user dan permasalahan database yang hash 150k
+ *user kepsek di sidebar pilihan halaman nilai siswa dan pengumuman tidak ke highlight waktu dipencet
+ *user guru, siswa, kepsek fitur reply pada forum ada bug jadi stlh reply ada keduplikat
+ *-user guru, siswa, kepsek pada halaman forum waktu add chat dan reply forum dikasih pilihan seperti waktu tambah pengumuman di admin
+-user admin dan kepsek waktu hapus pengumuman dikasih alert peringatan bahwa pengumuman akan dihapus (semacam konfirmasi kayak delete kelas,siswa,dll) 
+
+ yang di atas saya hapus ya? bntr sy blm cek smua gan bisa sekalian ubah logo di tab jadi logo sekolah gk? yang mana?
+ itu nanti aja kak. soalnya convert file lagi tu. jadi .ico ya iya kak saya udh ada saya kirim di wa ya. oke. tapi di pengerjaan selanjutnya saya ubah. sip. jangan lupa list
+ gan ini ada revisi baru coba agan kasih biayanya ya bntr ok. 
