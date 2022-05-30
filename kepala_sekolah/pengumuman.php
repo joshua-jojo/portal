@@ -1,5 +1,5 @@
 <?php
-$title = 'Data Pengumuman';
+$title = 'Pengumuman';
 $path = '../';
 require '../comp/header.php';
 

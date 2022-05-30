@@ -1,5 +1,5 @@
 <?php
-$title = 'Data Nilai';
+$title = 'Nilai Siswa';
 $path = '../';
 require '../comp/header.php';
 
