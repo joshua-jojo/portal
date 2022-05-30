@@ -78,7 +78,7 @@ include "auth_user.php";
                                             <a class="btn-success btn btn-sm text-white" id="<?= $pengumuman['id_pengumuman'] ?>" data-bs-toggle="modal" data-bs-target="#modaledit<?= $no ?>" style="width:100%;">Edit</a>
                                           </div>
                                           <div class="col-md-6">
-                                            <a href="delete_pengumuman.php?kode_pengumuman=<?= $pengumuman['id_pengumuman'] ?>" class="btn btn-sm bg-gradient-danger" style="width:100%;">Hapus</a>
+                                            <a data-bs-toggle="modal" data-bs-target="#modal_delete<?= $no ?>" class="btn btn-sm bg-gradient-danger" style="width:100%;">Hapus</a>
                                           </div>
                                         </div>
                                       </div>
@@ -87,6 +87,30 @@ include "auth_user.php";
                                 </div>
                               </td>
                             </tr>
+                            <div class="col-md-4">
+                              <div class="modal fade" id="modal_delete<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modal_delete" aria-hidden="true">
+                                <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h6 class="modal-title" id="modal-title-notification">Peringatan</h6>
+                                      <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="py-3 text-center">
+                                        <i class="ni ni-bell-55 ni-3x"></i>
+                                        <h4 class="text-gradient text-danger mt-4">Apakah Anda Yakin Ingin Menghapus?</h4>
+                                      </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary text-white ml-auto" data-bs-dismiss="modal">Batal</button>
+                                      <a class="btn btn-danger" href="delete_pengumuman.php?kode_pengumuman=<?= $pengumuman['id_pengumuman'] ?>" id="delete_link">Hapus</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                             <!-- <div class="modal fade" id="modaledit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modaleditLabel<?= $no ?>" aria-hidden="true"> -->
                             <div class="modal fade" id="modaledit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modaleditLabel<?= $no ?>" aria-hidden="true">
                               <form action="pengumuman_edit.php" name="modal_popup" enctype="multipart/form-data" method="post">

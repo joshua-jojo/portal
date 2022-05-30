@@ -2,12 +2,12 @@
 
 *user admin perbaiki sidebar waktu lihat jawaban tugas siswa sidebarnya berubah // ok
 
-*user kepsek di sidebar pilihan halaman nilai siswa dan pengumuman tidak ke highlight waktu dipencet 15k 
+*user kepsek di sidebar pilihan halaman nilai siswa dan pengumuman tidak ke highlight waktu dipencet 15k //ok
 
-*user guru, siswa, kepsek fitur reply pada forum ada bug jadi stlh reply ada keduplikat 30k
+*user guru, siswa, kepsek fitur reply pada forum ada bug jadi stlh reply ada keduplikat 30k // 
 
 *user guru, siswa, kepsek pada halaman forum waktu add chat dan reply forum dikasih pilihan seperti waktu tambah pengumuman di admin 35k
 
-*user admin dan kepsek waktu hapus pengumuman dikasih alert peringatan bahwa pengumuman akan dihapus (semacam konfirmasi kayak delete kelas,siswa,dll)
+*user admin dan kepsek waktu hapus pengumuman dikasih alert peringatan bahwa pengumuman akan dihapus (semacam konfirmasi kayak delete kelas,siswa,dll) //ok
 
 *perbaiki permasalahan file semua user dan permasalahan database yang hash 150k
