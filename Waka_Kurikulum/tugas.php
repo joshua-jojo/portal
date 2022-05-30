@@ -127,7 +127,6 @@ $format_id = $bulan . $tahun;
                               </td>
 
                               <td class="align-middle text-center text-sm">
-
                                 <span class="badge badge-sm bg-gradient-danger text-white" style="color:white">
                                   <a href="tugasjawaban.php?kode_pelajaran=<?= $tugas['id_pelajaran'] ?>&kode_kelas=<?= $tugas['id_kelas'] ?>&id_tugas=<?= $tugas['id_tugas'] ?>">Lihat Jawaban Siswa</a>
                                 </span>
@@ -145,7 +144,7 @@ $format_id = $bulan . $tahun;
                         </tbody>
                       <?php endif; ?>
 
-                      <?php if (mysqli_num_rows($CEK) === 0) : ?>
+                      <?php if (mysqli_num_rows($CEK) === 0) : ?> // karena ini nilainya 0 maka logika ini berjalan kalo tidak nol maka logika yang di atasnya
                         <thead>
                           <tr>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kelas</th>
