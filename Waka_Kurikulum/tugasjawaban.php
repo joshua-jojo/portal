@@ -2,7 +2,7 @@
 <!-- Semua sintaks di sini dibuat sendiri kak -->
 
 <?php
-$title = 'Jadwal';
+$title = 'Data Jadwal';
 $path = '../';
 require '../comp/header.php';
 
@@ -18,14 +18,13 @@ $format_id = $bulan . $tahun;
 
 <body class="g-sidenav-show bg-gray-100">
     <!-- aside -->
-    <?php require '../comp/sidebar.php' ?>
+    <?php require 'comp/sidebar.php' ?>
     <!--/ aside -->
 
     <!-- main content -->
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg">
 
         <!-- navbar -->
-        <?php $title = 'Tugas' ?>
         <?php require '../comp/navbar.php' ?>
 
         <!-- /navbar -->
