@@ -61,7 +61,7 @@ include "auth_user.php";
 
                       // $querymatakuliah = mysqli_query ($konek, "select tugas.kode_tugas,kode_kelas,nama_kelas,Nama_guru,nama_pelajaran,tugas,DATE_FORMAT(tanggal, '%d-%m-%Y')as tanggal from tugas inner join kelas on tugas.kode_kelas = kelas.id_kelas inner join guru on tugas.kode_guru = guru.kode_guru inner join pelajaran on tugas.kode_pelajaran = pelajaran.kode_pelajaran where tugas.kode_pelajaran = '$kd_pelajaran' and tugas.kode_kelas = '$res'");
                       // $querymatakuliah = mysqli_query($konek, "select * from tugas inner join kelas on tugas.id_kelas = kelas.id_kelas inner join guru on tugas.id_guru = guru.id_guru inner join pelajaran on tugas.id_pelajaran = pelajaran.id_pelajaran where tugas.id_pelajaran = '$kd_pelajaran' and tugas.id_kelas = '$res'");
-                      $querymatakuliah = mysqli_query($konek, "select tugas.id_tugas, tugas.id_kelas, nama_kelas, nama_guru, nama_pelajaran, file_tugas, file_jawaban, DATE_FORMAT(tanggal, '%d-%m-%Y') as tanggal from tugas left join kelas on tugas.id_kelas = kelas.id_kelas left join guru on tugas.id_guru = guru.id_guru left join pelajaran on tugas.id_pelajaran = pelajaran.id_pelajaran left join jawaban_tugas on tugas.id_tugas = jawaban_tugas.id_tugas where tugas.id_pelajaran = '$kd_pelajaran' and tugas.id_kelas = '$res'");
+                      $querymatakuliah = mysqli_query($konek, "select jawaban_tugas.nilai, tugas.id_tugas, tugas.id_kelas, nama_kelas, nama_guru, nama_pelajaran, file_tugas, file_jawaban, DATE_FORMAT(tanggal, '%d-%m-%Y') as tanggal from tugas left join kelas on tugas.id_kelas = kelas.id_kelas left join guru on tugas.id_guru = guru.id_guru left join pelajaran on tugas.id_pelajaran = pelajaran.id_pelajaran left join jawaban_tugas on tugas.id_tugas = jawaban_tugas.id_tugas where tugas.id_pelajaran = '$kd_pelajaran' and tugas.id_kelas = '$res'");
 
 
                       ?>
@@ -75,6 +75,7 @@ include "auth_user.php";
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Guru</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pelajaran</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tugas</th>
+                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nilai Tugas</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Batas Akhir</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
                         </tr>
@@ -107,6 +108,17 @@ include "auth_user.php";
                             <td class="align-middle text-center text-sm">
                               <span class="text-secondary text-xs font-weight-bolds">
                                 <a href="unduh_tugas.php?file=<?= $tugas['file_tugas'] ?>"><?= $tugas['file_tugas'] ?></a>
+                              </span>
+                            </td>
+                            <td class="align-middle text-center text-sm">
+                              <span class="text-secondary text-xs font-weight-bolds">
+                                <?php if ($tugas['nilai'] == null) {
+                                  echo 'Belum dinilai';
+                                } else {
+                                  echo $tugas['nilai'];
+                                }
+
+                                ?>
                               </span>
                             </td>
                             <td class="align-middle text-center text-sm">

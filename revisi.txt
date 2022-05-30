@@ -1,5 +1,5 @@
 
-*user siswa pada halaman tugas di kasih kolom nilai per tugas setelah guru menilai tiap tugas maka akan muncul nilainya juga pada siswa 15k
+*user siswa pada halaman tugas di kasih kolom nilai per tugas setelah guru menilai tiap tugas maka akan muncul nilainya juga pada siswa 15k // ok
 
 *user admin waktu lihat jawaban siswa sidebarnya berubah 5k
 
