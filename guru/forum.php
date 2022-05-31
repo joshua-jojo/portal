@@ -127,12 +127,16 @@ include "auth_user.php";
 
           <input type="hidden" name="status" class="form-control" value="guru" readonly />
 
-          <textarea name="komen" id="chat" class="form-control rounded-0 border-0" placeholder="Tulis Komentar" rows="5"></textarea>
+          <!-- <textarea name="komen" id="chat" class="form-control rounded-0 border-0" placeholder="Tulis Komentar" rows="5"></textarea> -->
+          <textarea rows="5" id="chat" class="form-control" name="komen" placeholder="Tulis Komentar.."></textarea>
+          <script>
+            CKEDITOR.replace('chat');
+          </script>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn bg-gradient-primary" data-bs-dismiss="modal">Kirim</button>
+          <button onclick="updateAllMessageForms()" type="submit" class="btn bg-gradient-primary" data-bs-dismiss="modal">Kirim</button>
         </div>
       </div>
     </div>
@@ -144,6 +148,11 @@ include "auth_user.php";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
+  function updateAllMessageForms() {
+    for (instance in CKEDITOR.instances) {
+      CKEDITOR.instances[instance].updateElement();
+    }
+  }
   $('#form_komen').on('submit', function(event) {
     event.preventDefault();
     let nama_pengirim = $('#nama_pengirim').val();

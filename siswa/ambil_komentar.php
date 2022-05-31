@@ -35,7 +35,9 @@ while ($row = $res1->fetch_assoc()) {
         Reply <i class='fa fa-reply'></i>
 
         </div></td>
-
+  <td valign='top'><div class='col-sm-2' style='margin-top:0px; margin-left:30px ; margin-bottom:10px;'>
+  <button type='button' class='btn btn-danger delete-reply' id='$row[id_comment]' data-bs-toggle='modal' data-bs-target='#modal_delete'>Delete <i class='fa fa-trash'></i></button>
+  </div></td>
   
     </tr>
     
@@ -81,7 +83,7 @@ function ambil_reply($konek, $parent_id = 0, $marginleft = 0)
       <legend class="text-primary">' . $row['nama_user'] . '</legend>
           <table>
           <tr>
-          <td width="800px"><p id="isi-komen" value=' . $row['comment'] . '>
+          <td width="800px"><p id="isi-komen">
           ' . $row['comment'] . '
           </p></td>
           
@@ -95,7 +97,9 @@ function ambil_reply($konek, $parent_id = 0, $marginleft = 0)
           </button>
           
     </div></td>
-
+    <td valign="top"><div class="col-sm-2" style="margin-top:0px; margin-left:30px ; margin-bottom:10px;">
+    <button type="button" class="btn btn-danger delete-reply"  id=' . $row['id_comment'] . ' data-bs-toggle="modal" data-bs-target="#modal_delete">Delete <i class="fa fa-trash"></i></button>
+    </div></td>
     
   <td>
  
@@ -140,16 +144,17 @@ function ambil_reply($konek, $parent_id = 0, $marginleft = 0)
 
           <input type="hidden" name="kelas" class="form-control" value="<?php echo $kelas; ?>" readonly />
 
-          <input type="hidden" name="status" class="form-control" value="murid" readonly />
+          <input type="hidden" name="status" class="form-control" value="guru" readonly />
 
-          <div class="form-group">
-            <textarea name="komen" id="komen" class="form-control border-0 rounded-0" placeholder="Tulis Komentar" rows="5"></textarea>
-          </div>
+          <textarea rows="5" id="komen" class="form-control" name="komen" placeholder="Tulis Komentar.."></textarea>
+          <script>
+            CKEDITOR.replace('komen');
+          </script>
         </div>
         <div class="modal-footer">
           <input type="hidden" name="komentar_id" id="komentar_id" value="0" />
 
-          <button type="submit" class="btn bg-gradient-primary" data-bs-dismiss="modal">Balas</button>
+          <button type="submit" class="btn bg-gradient-primary" onclick="updateAllMessageForms()" data-bs-dismiss="modal">Balas</button>
         </div>
       </div>
     </div>

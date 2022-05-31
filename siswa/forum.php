@@ -37,7 +37,7 @@ include "auth_user.php";
 
 <body class="g-sidenav-show bg-gray-100">
   <!-- aside -->
-  <?php require 'comp/sidebar.php' ?>
+  <?php require '../comp/sidebar.php' ?>
   <!--/ aside -->
 
   <!-- main content -->
@@ -125,57 +125,34 @@ include "auth_user.php";
 
           <input type="hidden" name="kelas" class="form-control" value="<?= $kelas; ?>" readonly />
 
-          <input type="hidden" name="status" class="form-control" value="murid" readonly />
+          <input type="hidden" name="status" class="form-control" value="guru" readonly />
 
-          <textarea name="komen" id="chat" class="form-control rounded-0 border-0" placeholder="Tulis Komentar" rows="5"></textarea>
+          <!-- <textarea name="komen" id="chat" class="form-control rounded-0 border-0" placeholder="Tulis Komentar" rows="5"></textarea> -->
+          <textarea rows="5" id="chat" class="form-control" name="komen" placeholder="Tulis Komentar.."></textarea>
+          <script>
+            CKEDITOR.replace('chat');
+          </script>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn bg-gradient-primary" data-bs-dismiss="modal">Kirim</button>
+          <button onclick="updateAllMessageForms()" type="submit" class="btn bg-gradient-primary" data-bs-dismiss="modal">Kirim</button>
         </div>
       </div>
     </div>
   </form>
 </div>
 
-<!-- Modal Balas Chat-->
-<div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="ModalAddLabel" aria-hidden="true">
-  <form method="POST" id="form_komen"></form>
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Balas</h5>
-        <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="text" name="nama_pengirim" id="nama_pengirim" class="form-control mb-2 rounded-0 border-0" value="Nama : <?php echo $_SESSION['Username'] ?>" readonly />
-
-        <input type="hidden" name="pelajaran" class="form-control" value="<?php echo $id; ?>" readonly />
-
-        <input type="hidden" name="kelas" class="form-control" value="<?php echo $kelas; ?>" readonly />
-
-        <input type="hidden" name="status" class="form-control" value="murid" readonly />
-
-        <div class="form-group">
-          <textarea name="komen" id="komen" class="form-control border-0 rounded-0" placeholder="Tulis Komentar" rows="5"></textarea>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <input type="hidden" name="komentar_id" id="komentar_id" value="0" />
-        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn bg-gradient-primary" data-bs-dismiss="modal">Balas</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
+  function updateAllMessageForms() {
+    for (instance in CKEDITOR.instances) {
+      CKEDITOR.instances[instance].updateElement();
+    }
+  }
   $('#form_komen').on('submit', function(event) {
     event.preventDefault();
     let nama_pengirim = $('#nama_pengirim').val();
@@ -241,6 +218,7 @@ include "auth_user.php";
 
     $('#ModalAdd').modal('hide');
   });
+
 
   $(document).on('click', '.delete-reply', function() {
     let id_kelas = $('#id_kelas').val();
