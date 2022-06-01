@@ -144,7 +144,7 @@ $format_id = $bulan . $tahun;
                         </tbody>
                       <?php endif; ?>
 
-                      <?php if (mysqli_num_rows($CEK) === 0) : ?> // karena ini nilainya 0 maka logika ini berjalan kalo tidak nol maka logika yang di atasnya
+                      <?php if (mysqli_num_rows($CEK) === 0) : ?>
                         <thead>
                           <tr>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kelas</th>
