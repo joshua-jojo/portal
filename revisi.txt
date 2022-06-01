@@ -6,7 +6,7 @@
 
 *user guru, siswa, kepsek fitur reply pada forum ada bug jadi stlh reply ada keduplikat 30k // 
 
-*user guru, siswa, kepsek pada halaman forum waktu add chat dan reply forum dikasih pilihan seperti waktu tambah pengumuman di admin 35k// kepsek=ok siswa=ok
+*user guru, siswa, kepsek pada halaman forum waktu add chat dan reply forum dikasih pilihan seperti waktu tambah pengumuman di admin 35k// kepsek=ok siswa=ok guru=ok
 
 *user admin dan kepsek waktu hapus pengumuman dikasih alert peringatan bahwa pengumuman akan dihapus (semacam konfirmasi kayak delete kelas,siswa,dll) //ok
 

@@ -11,7 +11,8 @@ $sql = $konek->query("select foto from foto_profil where id_user = '$id_userr'")
 while ($data = mysqli_fetch_array($sql)) {
     $foto = $data["foto"];
 }
-
+date_default_timezone_set("Asia/Jakarta");
+$nama_foto = "profil_".$id_userr."_".date('Y_m_d_H_i_s_').$nama_foto;
 if (!empty($foto)) {
     move_uploaded_file($file_tmp, '../foto_profil/' . $nama_foto);
     $sql = $konek->query("UPDATE `foto_profil` SET `foto`='$nama_foto' WHERE id_user = '$id_userr'");
