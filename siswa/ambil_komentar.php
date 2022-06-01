@@ -25,7 +25,7 @@ while ($row = $res1->fetch_assoc()) {
         <table id='data'>
         <tr>
         <td width='800px'><p class='isi-komen'>
-        $row[comment]
+        $row[comment] aaaaaaaaaaa
         </p></td>
         
         <td style='width:100px; padding-left:10px;' valign='top' class='date'><div style='margin-top:-20px; margin-bottom:15px;'>$row[tanggal]</div></td>
