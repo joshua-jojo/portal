@@ -9,7 +9,7 @@ $querymhs = mysqli_query($konek, "SELECT * FROM tugas inner join kelas on tugas.
 if ($querymhs == false) {
   die("Terjadi Kesalahan : " . mysqli_error($konek));
 }
-
+date_default_timezone_set("Asia/Jakarta");
 $tanggal_upload = date("Y-m-d");
 while ($tugas = mysqli_fetch_array($querymhs)) {
 
@@ -70,7 +70,8 @@ while ($tugas = mysqli_fetch_array($querymhs)) {
 
           <div class="form-group">
             <label>Tanggal</label>
-            <input readonly name="tanggal_upload" type="date" class="form-control" placeholder="batas akhir" value="<?= $tanggal_upload; ?>">
+            <input readonly type="date" class="form-control" placeholder="batas akhir" value="<?= $tanggal_upload; ?>">
+            <input hidden name="tanggal_upload" type="date" class="form-control" placeholder="batas akhir" value="<?= $tanggal_upload; ?>">
           </div>
 
         </div>
