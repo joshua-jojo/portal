@@ -9,6 +9,9 @@ $file_tmp 			= $_FILES['berkas']['tmp_name'];
 
 $test = mysqli_query($konek, "SELECT * from pelajaran where id_pelajaran='$Kode_Matakuliah'");
 
+date_default_timezone_set("Asia/Jakarta");
+$Pembahasan = "pelajaran_".date('Y_m_d_H_i_s_').$Pembahasan;
+
 if (mysqli_num_rows($test) > 0) {
 ?>
 	<script>
