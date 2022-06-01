@@ -11,6 +11,10 @@ $jam					= $_POST["jam"];
 $materijadwal  			= $_FILES['berkas']['name'];
 $file_tmp			= $_FILES['berkas']['tmp_name'];
 $link = $_POST['linkvidcon'];
+
+date_default_timezone_set("Asia/Jakarta");
+$materijadwal = "pelajaran_".$kelas."_".$guru."_".date('Ymd_His_').$materijadwal;
+
 if (!empty($file_tmp)) {
 	move_uploaded_file($file_tmp, '../jadwal/' . $materijadwal);
 	if ($edit = mysqli_query($konek, "UPDATE jadwal SET id_pelajaran='$pelajaran', id_kelas='$kelas', id_guru='$guru',

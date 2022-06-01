@@ -12,7 +12,7 @@ $materijadwal  			= $_FILES['berkas']['name'];
 $file_tmp			= $_FILES['berkas']['tmp_name'];
 
 date_default_timezone_set("Asia/Jakarta");
-$materijadwal = "pelajaran_".$kelas."_".$guru."_".date('Y_m_d_H_i_s_').$materijadwal;
+$materijadwal = "pelajaran_".$kelas."_".$guru."_".date('Ymd_His_').$materijadwal;
 
 $link = $_POST['linkvidcon'];
 move_uploaded_file($file_tmp, '../jadwal/' . $materijadwal);
