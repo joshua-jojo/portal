@@ -7,6 +7,9 @@ $tanggal = $_POST["tanggal"];
 $lampiran	= $_FILES['lampiran']['name'];
 $file_tmp = $_FILES['lampiran']['tmp_name'];
 
+date_default_timezone_set("Asia/Jakarta");
+$lampiran = "lampiran_".date('Ymd_His_').$lampiran;
+
 // $test = mysqli_query($konek, "select * from pelajaran where id_pelajaran='$Kode_Matakuliah'");
 
 // if (mysqli_num_rows($test) > 0) {
