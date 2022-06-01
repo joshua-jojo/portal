@@ -17,6 +17,8 @@ $file_tmp = $_FILES['lampiran']['tmp_name'];
 	</script> -->
 <?php
 // } else {
+date_default_timezone_set("Asia/Jakarta");
+$lampiran = "lampiran_" . date('Ymd_His_') . $lampiran;
 move_uploaded_file($file_tmp, '../lampiran_pengumuman/' . $lampiran);
 if ($add = mysqli_query($konek, "INSERT INTO pengumuman (judul, deskripsi, tanggal_pembuatan, lampiran) VALUES ('$judul','$keterangan','$tanggal','$lampiran')")) {
 	header("Location: pengumuman.php");
