@@ -8,6 +8,8 @@ $pelajaran 			= $_POST["pelajaran"];
 $tugas  			= $_FILES['tugas']['name'];
 $batas_akhir 		= $_POST["tanggal"];
 $file_tmp 			= $_FILES['tugas']['tmp_name'];
+date_default_timezone_set("Asia/Jakarta");
+$tugas = "tugas_"."_".$id."_".date('Ymd_His_').$tugas;
 
 $CEK = mysqli_query($konek, "select * from tugas where id_pelajaran = '$pelajaran' and id_kelas='$kelas'");
 

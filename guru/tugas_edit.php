@@ -7,6 +7,9 @@ $tanggal			= $_POST["tanggal"];
 $tugas  			= $_FILES['tugas']['name'];
 $file_tmp			= $_FILES['tugas']['tmp_name'];
 
+date_default_timezone_set("Asia/Jakarta");
+$tugas = "tugas_"."_".$id."_".date('Ymd_His_').$tugas;
+
 if (!empty($file_tmp)) {
 
 	move_uploaded_file($file_tmp, '../file/' . $tugas);
