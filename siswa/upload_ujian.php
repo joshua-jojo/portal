@@ -7,6 +7,9 @@ $id                    = $_POST["id_ujian"];
 $ujian                = $_FILES['ujian']['name'];
 $file_tmp             = $_FILES['ujian']['tmp_name'];
 $id_user            = $_SESSION["Id_User"];
+
+date_default_timezone_set("Asia/Jakarta");
+$ujian = "tugas_"."_".$id."_".$id_user."_".date('Ymd_His_').$ujian;
 $querymhs = mysqli_query($konek, "SELECT * FROM ujian_murid WHERE id_ujianjawaban='$id' AND id_murid='$id_user'");
 
 if ($querymhs == false) {
