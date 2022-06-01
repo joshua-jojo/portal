@@ -406,6 +406,9 @@ if (isset($_POST['ujiansimpan'])) {
     </script>
 <?php
   } else {
+    date_default_timezone_set("Asia/Jakarta");
+    $ujian = "ujian_" . $tipeujian . "_" . $kelas . "_" . $pelajaran . "_" . date('Ymd_His_') . $ujian;
+
     move_uploaded_file($file_tmp, '../file/' . $ujian);
     if ($add = mysqli_query($konek, "INSERT INTO ujian (tipeujian, id_kelas, id_guru, id_pelajaran, soal, tanggalujian, waktumulai, waktuakhir) VALUES 
 	('$tipeujian', '$kelas', '$guru', '$pelajaran', '$ujian', '$tanggalujian', '$waktumulai', '$waktuakhir')")) {
