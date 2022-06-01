@@ -10,6 +10,9 @@ $tanggal			= $_POST['tanggal_upload'];
 
 $file_tmp 			= $_FILES['jawaban']['tmp_name'];
 
+date_default_timezone_set("Asia/Jakarta");
+$jawaban = "tugas_"."_".$id."_".$kelas."_".date('Ymd_His_').$jawaban;
+
 move_uploaded_file($file_tmp, '../jawaban_tugas/' . $jawaban);
 if ($_SESSION['Username'] !== $nama) {
 ?>
