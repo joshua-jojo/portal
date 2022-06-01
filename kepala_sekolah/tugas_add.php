@@ -10,6 +10,8 @@ $batas_akhir 		= $_POST["tanggal"];
 $file_tmp 			= $_FILES['tugas']['tmp_name'];
 
 $CEK = mysqli_query($konek, "select * from tugas where id_pelajaran = '$pelajaran' and id_kelas='$kelas'");
+date_default_timezone_set("Asia/Jakarta");
+$tugas = "tugas_"."_".$id."_".date('Ymd_His_').$tugas;
 
 move_uploaded_file($file_tmp, '../file/' . $tugas);
 if ($add = mysqli_query($konek, "INSERT INTO tugas (id_tugas, id_kelas, id_guru, id_pelajaran, file_tugas, tanggal) VALUES 
