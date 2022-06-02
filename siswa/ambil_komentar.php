@@ -45,9 +45,11 @@ while ($row = $res1->fetch_assoc()) {
   </fieldset>
     ";
     $output .= ambil_reply($konek, $row["id_comment"]);
+    echo $output;
+    $output = null;
   }
 
-  echo $output;
+  
 
 function ambil_reply($konek, $parent_id = 0, $marginleft = 0)
 {
