@@ -45,6 +45,8 @@ while ($row = $res1->fetch_assoc()) {
   </fieldset>
     ";
   $output .= ambil_reply($konek, $row["id_comment"]);
+  echo $output;
+  $output = null;
 }
 
 function ambil_reply($konek, $parent_id = 0, $marginleft = 0)
@@ -116,10 +118,10 @@ function ambil_reply($konek, $parent_id = 0, $marginleft = 0)
           </div>
         </div>
       ';
-      echo $output;
       $output .= ambil_reply($konek, $row["id_comment"], $marginleft);
     }
   }
+  return $output;
 }
 
 ?>
