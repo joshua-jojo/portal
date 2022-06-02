@@ -4,7 +4,7 @@
 
 *user kepsek di sidebar pilihan halaman nilai siswa dan pengumuman tidak ke highlight waktu dipencet 15k //ok
 
-*user guru, siswa, kepsek fitur reply pada forum ada bug jadi stlh reply ada keduplikat 30k // ????????? yang ini
+*user guru, siswa, kepsek fitur reply pada forum ada bug jadi stlh reply ada keduplikat 30k // ok
 
 *user guru, siswa, kepsek pada halaman forum waktu add chat dan reply forum dikasih pilihan seperti waktu tambah pengumuman di admin 35k// kepsek=ok siswa=ok guru=ok
 
