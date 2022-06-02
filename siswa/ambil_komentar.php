@@ -7,7 +7,7 @@ $kelas  = $_GET['kode_kelas'];
 
 $output = "";
 
-$query = "SELECT * FROM forum inner join pelajaran on forum.id_pelajaran = pelajaran.id_pelajaran WHERE id_comment_parent = 0 and forum.id_pelajaran = '$id' and forum.id_kelas = '$kelas' ORDER BY id_comment ASC";
+$query = "SELECT * FROM forum WHERE id_comment_parent = 0 and id_pelajaran = '$id' and id_kelas = '$kelas' ORDER BY id_comment ASC";
 $dewan1 = $konek->prepare($query);
 $dewan1->execute();
 $res1 = $dewan1->get_result();
@@ -25,7 +25,7 @@ while ($row = $res1->fetch_assoc()) {
         <table id='data'>
         <tr>
         <td width='800px'><p class='isi-komen'>
-        $row[comment] aaaaaaaaaaa
+        $row[comment]
         </p></td>
         
         <td style='width:100px; padding-left:10px;' valign='top' class='date'><div style='margin-top:-20px; margin-bottom:15px;'>$row[tanggal]</div></td>
@@ -44,8 +44,10 @@ while ($row = $res1->fetch_assoc()) {
         </table>
   </fieldset>
     ";
-  $output .= ambil_reply($konek, $row["id_comment"]);
-}
+    $output .= ambil_reply($konek, $row["id_comment"]);
+  }
+
+  echo $output;
 
 function ambil_reply($konek, $parent_id = 0, $marginleft = 0)
 {
@@ -116,10 +118,10 @@ function ambil_reply($konek, $parent_id = 0, $marginleft = 0)
           </div>
         </div>
       ';
-      echo $output;
       $output .= ambil_reply($konek, $row["id_comment"], $marginleft);
     }
   }
+  return $output;
 }
 
 ?>
@@ -144,7 +146,7 @@ function ambil_reply($konek, $parent_id = 0, $marginleft = 0)
 
           <input type="hidden" name="kelas" class="form-control" value="<?php echo $kelas; ?>" readonly />
 
-          <input type="hidden" name="status" class="form-control" value="guru" readonly />
+          <input type="hidden" name="status" class="form-control" value="siswa" readonly />
 
           <textarea rows="5" id="komen" class="form-control" name="komen" placeholder="Tulis Komentar.."></textarea>
           <script>

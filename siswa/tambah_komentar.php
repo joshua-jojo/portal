@@ -25,6 +25,6 @@ $status = $_POST['status'];
 // $dewan1->bind_param("ssssss", $komen_id, $komen, $nama_pengirim, $status, $pelajaran, $kelas);
 // $dewan1->execute();
 
-mysqli_query($konek, "INSERT INTO `forum`( `id_comment_parent`,`comment`, `nama_user`, `status`, `id_pelajaran`, `id_kelas`) VALUES ('$komen_id','$komen','$nama_pengirim','$status','$pelajaran','$kelas')");
+mysqli_query($konek, "INSERT INTO `forum`( `id_comment_parent`,`comment`, `nama_user`, `status`, `id_pelajaran`, `id_kelas`) VALUES ('$komen_id','$komen','$nama_pengirim','siswa','$pelajaran','$kelas')");
 
 echo json_encode(['success' => 'Sukses']);
