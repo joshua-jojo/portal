@@ -61,7 +61,7 @@ include "auth_user.php";
 
                           $res = $hasil['kelas'];
 
-                          $queryujian = mysqli_query($konek, "select * from ujian inner join kelas on ujian.id_kelas = kelas.id_kelas inner join guru on ujian.id_guru = guru.id_guru inner join pelajaran on ujian.id_pelajaran = pelajaran.id_pelajaran left join ujian_murid on ujian.id_ujian = ujian_murid.id_ujianjawaban where ujian.id_kelas = '$res'");
+                          $queryujian = mysqli_query($konek, "select * from ujian inner join kelas on ujian.id_kelas = kelas.id_kelas inner join guru on ujian.id_guru = guru.id_guru inner join pelajaran on ujian.id_pelajaran = pelajaran.id_pelajaran where ujian.id_kelas = '$res'");
                           if ($queryujian == false) {
                             die("Terjadi Kesalahan : " . mysqli_error($konek));
                           }
@@ -100,17 +100,25 @@ include "auth_user.php";
                                 </span>
                               </td>
                               <td class="align-middle text-center text-sm">
-                                <?php if ($ujian['tipeujian'] != null) { ?>
+                                <?php
+                                if ($ujian['tipeujian'] != null) { ?>
                                   <span class="text-xs font-weight-bold">
                                     <a href="<?= "../file/" . $ujian['soal'] ?>" target="_blank" download>Soal <?= $ujian['tipeujian'] ?></a>
                                   </span>
                                   <br>
 
-                                  <?php if ($ujian['jawaban'] != null) { ?>
-                                    <span class="text-xs font-weight-bold">
-                                      <a href="<?= "../ujian_murid/" . $ujian['jawaban'] ?>" target="_blank" download>Lihat Jawaban <?= $ujian['tipeujian'] ?> Saya</a>
-                                    </span>
-                                  <?php } else { ?>
+                                  <?php
+                                  $data_cek = mysqli_query($konek, "SELECT * FROM `ujian_murid` WHERE id_ujianjawaban = '$ujian[id_ujian]' AND id_murid = '$_SESSION[Id_User]'");
+                                  $data = mysqli_num_rows($data_cek);
+                                  if ($data != null) {
+                                    while ($ujian_data = mysqli_fetch_array($data_cek)) :
+                                  ?>
+                                      <span class="text-xs font-weight-bold">
+                                        <a href="<?= "../ujian_murid/" . $ujian_data['jawaban'] ?>" target="_blank" download>Lihat Jawaban <?= $ujian['tipeujian'] ?> Saya</a>
+                                      </span>
+                                    <?php
+                                    endwhile;
+                                  } else { ?>
                                     <span class="badge badge-sm bg-gradient-info">
                                       <a class="text-white open_modal_uts" id="<?= $ujian['id_ujian'] ?>" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">UPLOAD <?= $ujian['tipeujian'] ?></a>
                                     </span>

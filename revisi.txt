@@ -29,6 +29,15 @@ bisa ubah jadi ujian gk gan kata2nya? yang bagian mana tu kak
 udah kak coba tes lagi. itu urutannya apa aja ya? itu bisa di custom kalo kakak mau.
 bisa gk custom jadi jawaban-(tugas/UTS/UAS)-id siswa-nama siswa-nama pelajaran? nampaknya kalo yang mau spesifik itu harus buat relasi lagi. tapi saya coba nanti. oke gan, saya penasaran kenapa di tabel foto profil dipake unique dan bukan primary key gan? yang id user ya kak? yes. ya itu sebenarnya ga terlalu maslah sih. tapi saya biasanya selalu buat uniq karena saya ga mau ada data yang sama. masak iya 1 user punya 2 foto profil? bedanya dgn primary apa ya? saya kurang mendalami data base tapi setau saya primary sama uniq itu mempunyai tujuan yang sama yaitu tidak ada data yang boleh kembar. berarti kalau diubahj jd primary gk masalah? seharusnya gamasalah. oh ok. sama ini gan bisa gk tombol ingat saya sekali diaktifin aktif terus walaupun user login logout?. itu biasanya pakai cookie. kalo seandikan punya kakak ilang itu biasanaya terjadi kalo kakak programmnya pakai session. mksdny ilang apa ya? jadi gini itu kan data ya kak. kalo kakak nyimpen datanya pakai metode sessio seperti ini. nah itu ketika kita matikan browser atau buka ulang browser itu bakal ilang kak. oh iya kalau pakai cookie berarti gk ilang ya data2nya seharusnya enggak. perlu rombak gk gan?perlunlah tu kak. itu aja dua metode yang berbeda. itu ada kata2 setcookie itu bagian session jg? dia ada set cookie tapi saya ga tau dia meletakan kodingan untuk menyimpan datanya dimana. selagi itu ha jalan berarti gaada . berarti barisan kodingannya gk ke run ya. itu ada kak? ini saya ambil dri github public jdi kurang begitu paham seluruh kodingnya. oalah. tapi biasanya kalo di laravel itu enak ngodingnya bisa lebih banyak fiturnya. saya juga kurang paham sih kalo set nya secara native. ok sip.
 
+o ya gan yg custom nama ini tulisan jawaban blm ada gan sama skalian wktu admin upload soal ujian juga gan jadi tulisannya dpnnya ada kata "soal" gitu gan bisa?
+
+gimana kalo besok sesudah tf kak. malem ini ga sempet mau push rank. ok aman bsk skalian mau revisi dkit2 lagi aja ya.
+
+jadi rutenya gini kak.
+
+tf->kerjain rename soal (free) -> kerjain revisi(beda hitungan). gimana? ok aman bsk jambrp? kakak tf nya pagi aja soalnya saya bisa ceknya pagi. kalo saya kerjainnya malem. 260k kan ya? sy tf skrg tlg push di github ya ok.
+
+
 kalau masalah yg siswa di kelas yg sama trus upload jawaban yg ketimpa kmrn ud solve gan? kalo upload jawabn udah kak tapikalo siswa itu yang mana ya kak. saya coba dlu
 
 masih ketimpa gan bagian mananya kak?
@@ -39,3 +48,11 @@ ini kakak salah di relasi dan struktur tabel sih. minggu lalu ktny bis ke solve 
 tolong dicek ya gan yg masalah ini trus cb kabari saya. yg revisi di atas sudah saya cek semua gan ud oke..  oke kak kalo gitu saya coba relasiin ulanglagi kalo seandikan rumit itu besda hitungan kalo seandaikan mudah itu free. oh ya chat ini jgn diapus ya gan buat history dulu biar g lupa okeee.
 
 jadi yg 150k itu apa aja ya gan yg direvisi? penamaan file aja kh?. itu saya masukkan juga sekalian ke relasi yang barusan. kalo seandaiakan mudah saya kasih free. kalo rumit saya tambahin dikit. itu biasanya harus rombak. tapi doain aja daya bisa akali. Amin kabari ya gan bntr saya mau cek yg foto profil juga ke duplikat gk. oke yg ini aman. si.p gan makasih ya ditunggu kaba. oke kak. saya cek yang belum tadi ya.
+
+error gan ini saya cek dulu filenya kak hm masih ketimpa gan. coba tes lagi kak tes upload lagi kak iya gan masih ketimpa. oke kak saya coba langsung benerin
+coba tes lagi kak. yg ujian gan. saya cek dulu ya
+coba cek kak.
+
+gan yg admin ada bugnya juga. apa tu yang jadwal pelajaran tugasnya
+
+admin keluarinnya keduplikat. untuk penomornannya juga gan tolong, admin juga gbs donlod jaw

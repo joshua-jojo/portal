@@ -74,7 +74,7 @@ $format_id = $bulan . $tahun;
                       // $querymatakuliah = mysqli_query($konek, "select * from tugas inner join kelas on tugas.kode_kelas = kelas.id_kelas inner join guru on tugas.kode_guru = guru.kode_guru inner join pelajaran on tugas.kode_pelajaran = pelajaran.kode_pelajaran where tugas.kode_kelas = '$kelas' and tugas.kode_pelajaran = '$id'");
                       $querymatakuliah = mysqli_query($konek, "select * from tugas inner join kelas on tugas.id_kelas = kelas.id_kelas inner join guru on tugas.id_guru = guru.id_guru inner join pelajaran on tugas.id_pelajaran = pelajaran.id_pelajaran where tugas.id_kelas = '$kelas' and tugas.id_pelajaran = '$id'");
 
-                      $CEK = mysqli_query($konek, "select * from tugas inner join kelas on tugas.id_kelas = kelas.id_kelas inner join guru on tugas.id_guru = guru.id_guru inner join pelajaran on tugas.id_pelajaran = pelajaran.id_pelajaran inner join jawaban_tugas on tugas.id_tugas = jawaban_tugas.id_tugas where tugas.id_pelajaran = '$id' and tugas.id_kelas = '$kelas'");
+                      $CEK = mysqli_query($konek, "select * from tugas inner join kelas on tugas.id_kelas = kelas.id_kelas inner join guru on tugas.id_guru = guru.id_guru inner join pelajaran on tugas.id_pelajaran = pelajaran.id_pelajaran where tugas.id_pelajaran = '$id' and tugas.id_kelas = '$kelas'");
                       ?>
 
                       <?php if (mysqli_num_rows($CEK) > 0) : ?>
@@ -97,7 +97,7 @@ $format_id = $bulan . $tahun;
                             <tr>
                               <td class="align-middle text-sm">
                                 <span class="text-secondary text-xs font-weight-bolds">
-                                  <?= $no ?>
+                                  <?= $no++ ?>
                                 </span>
                               </td>
                               <td class="align-middle text-sm">

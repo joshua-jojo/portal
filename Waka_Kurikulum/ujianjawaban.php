@@ -74,7 +74,7 @@ include "auth_user.php";
                                                                 </td>
                                                                 <td class="align-middle text-center text-sm">
                                                                     <span class="text-secondary text-xs font-weight-bolds">
-                                                                        <a href="unduh_jawaban.php?file=<?= $ujian['jawaban'] ?>"><?= $ujian['jawaban'] ?></a>
+                                                                        <a href="unduh_jawaban_ujian.php?file=<?= $ujian['jawaban'] ?>"><?= $ujian['jawaban'] ?></a>
                                                                     </span>
                                                                 </td>
                                                                 <td class="align-middle text-center text-sm">

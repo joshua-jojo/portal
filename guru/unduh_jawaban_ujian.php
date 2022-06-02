@@ -1,10 +1,9 @@
 <?php
 // Downloads files
 // Tentukan folder file yang boleh di download
-$folder = "../jawaban_tugas/";
+$folder = "../ujian_murid/";
 $filename = $_GET['file'];
 $file_extension = strtolower(substr(strrchr($filename, "."), 1));
-
 // Lalu cek menggunakan fungsi file_exist
 if (!file_exists($folder . $_GET['file'])) {
 ?>
@@ -29,6 +28,6 @@ else {
     header("Content-Disposition: attachment; filename=" . basename($filename));
     header("Content-Type: application/octet-stream;");
     //header("Content-Transfer-Encoding: binary");
-    readfile("../ujian_murid/" . $filename);
+    readfile("../jawaban_tugas/" . $filename);
 }
 ?>

@@ -1,7 +1,7 @@
 <?php
 // Downloads files
 // Tentukan folder file yang boleh di download
-$folder = "../ujian_murid/";
+$folder = "../jawaban_tugas/";
 $filename = $_GET['file'];
 $file_extension = strtolower(substr(strrchr($filename, "."), 1));
 // Lalu cek menggunakan fungsi file_exist

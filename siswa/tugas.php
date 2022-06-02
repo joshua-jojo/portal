@@ -141,15 +141,18 @@ include "auth_user.php";
                               <?php
                               $tugas_deteksi = mysqli_query($konek, "SELECT * FROM `jawaban_tugas` WHERE id_tugas = '$tugas[id_tugas]' and id_siswa = '$_SESSION[Id_User]'");
                               $data = mysqli_num_rows($tugas_deteksi);
-                              if ($data != null) { ?>
-                                <span class="badge badge-sm bg-gradient-info">
-                                  <a href='#' class='open_modal update' data-bs-toggle="modal" data-bs-target="#update" id="<?= $tugas['id_tugas'] ?>">Upload</a>
-                                </span>
-                                <br>
-                                <span class="text-xs font-weight-bold">
-                                  <a href="unduh_jawaban.php?file=<?= $tugas['file_jawaban'] ?>" target="_blank">Lihat Jawaban Saya</a>
-                                </span>
-                              <?php } else { ?>
+                              if ($data != null) {
+                                while ($tugas = mysqli_fetch_array($tugas_deteksi)) : ?>
+                                  <span class="badge badge-sm bg-gradient-info">
+                                    <a href='#' class='open_modal update' data-bs-toggle="modal" data-bs-target="#update" id="<?= $tugas['id_tugas'] ?>">Upload</a>
+                                  </span>
+                                  <br>
+                                  <span class="text-xs font-weight-bold">
+                                    <a href="unduh_jawaban.php?file=<?= $tugas['file_jawaban'] ?>" target="_blank">Lihat Jawaban Saya</a>
+                                  </span>
+                                <?php endwhile;
+                              } else {
+                                ?>
                                 <span class="badge badge-sm bg-gradient-info">
                                   <a href='#' class='open_modal add' data-bs-toggle="modal" data-bs-target="#exampleModal" id="<?= $tugas['id_tugas'] ?>">Upload</a>
                                 </span>
@@ -157,7 +160,8 @@ include "auth_user.php";
                                 <span class="text-xs font-weight-bold">
                                   Belum Ada Jawaban
                                 </span>
-                              <?php    }
+                              <?php
+                              }
 
                               ?>
 
