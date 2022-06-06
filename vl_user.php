@@ -29,6 +29,8 @@ if ($test > 0) {
 		$_SESSION["Password"] 			= $user["password"];
 		$_SESSION["id_users_1"] 		= $user["no_role_users"];
 		$_SESSION["Id_User"] 			= $user["id_users"];
+
+
 		// $_SESSION["Foto"]				= $user["Foto"];
 		$_SESSION["Login"] 				= true;
 

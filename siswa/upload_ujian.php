@@ -4,12 +4,22 @@ include "../koneksi.php";
 include "auth_user.php";
 
 $id                    = $_POST["id_ujian"];
-$ujian                = $_FILES['ujian']['name'];
-$file_tmp             = $_FILES['ujian']['tmp_name'];
-$id_user            = $_SESSION["Id_User"];
-
+$ujian                  = $_FILES['ujian']['name'];
+$file_tmp               = $_FILES['ujian']['tmp_name'];
+$id_user                 = $_SESSION["Id_User"];
+$nama_user             = $_SESSION["Username"];
+$tipe = "";
+$nama_pelajaran = "";
+$query = mysqli_query($konek, "SELECT * FROM `ujian` WHERE id_ujian = '$id'");
+while ($ujian_data = mysqli_fetch_array($query)) :
+    $tipe = $ujian_data['tipeujian'];
+endwhile;
+$query = mysqli_query($konek, "SELECT * FROM `ujian` INNER JOIN pelajaran ON ujian.id_pelajaran = pelajaran.id_pelajaran WHERE ujian.id_ujian = '$id'");
+while ($ujian_data = mysqli_fetch_array($query)) :
+    $nama_pelajaran = $ujian_data['nama_pelajaran'];
+endwhile;
 date_default_timezone_set("Asia/Jakarta");
-$ujian = "ujian_"."_".$id."_".$id_user."_".date('Ymd_His_').$ujian;
+$ujian = "jawaban_" . $tipe . "_" . "_" . $id . "_" . $nama_user . "_".$nama_pelajaran."_" . date('Ymd_His_') . $ujian;
 $querymhs = mysqli_query($konek, "SELECT * FROM ujian_murid WHERE id_ujianjawaban='$id' AND id_murid='$id_user'");
 
 if ($querymhs == false) {
