@@ -9,11 +9,19 @@ $jawaban			= $_FILES['jawaban']['name'];
 $tanggal			= $_POST['tanggal_upload'];
 $kode				= $_POST['kode'];
 $kelas				= $_POST['kelas'];
+$nama_user             = $_SESSION["Username"];
+$tipe = "";
+$nama_pelajaran = "";
 
 $file_tmp 			= $_FILES['jawaban']['tmp_name'];
 
+$query = mysqli_query($konek, "SELECT * FROM `tugas` INNER JOIN pelajaran on tugas.id_pelajaran = pelajaran.id_pelajaran WHERE tugas.id_tugas = '$id'");
+while ($ujian_data = mysqli_fetch_array($query)) :
+    $nama_pelajaran = $ujian_data['nama_pelajaran'];
+endwhile;
+
 date_default_timezone_set("Asia/Jakarta");
-$jawaban = "tugas_"."_".$_SESSION["Id_User"]."_".$id."_".$kelas."_".date('Ymd_His_').$jawaban;
+$jawaban = "jawaban_tugas_" . "_" . $id . "_" . $nama_user . "_".$nama_pelajaran."_" . date('Ymd_His_').$jawaban;
 
 move_uploaded_file($file_tmp, '../jawaban_tugas/' . $jawaban);
 if ($_SESSION['Username'] !== $nama) {
