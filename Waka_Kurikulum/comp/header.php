@@ -4,14 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <?php 
-  if (!empty($_SESSION["id_users_1"])){
-    echo '<link rel="icon" href="../assets/img/favicon.ico" />';
-  }
-  else {
-    echo '<link rel="icon" href="assets/img/favicon.ico" />';
-  }
-  ?>
+  <link rel="icon" href="../assets/img/favicon.ico" />
   <title><?= $title ?></title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link href="<?= $path ?>assets/css/nucleo-icons.css" rel="stylesheet" />

@@ -1,7 +1,7 @@
 <?php
 $title = 'Nilai Siswa';
 $path = '../';
-require '../comp/header.php';
+require 'header.php';
 
 session_start();
 $bulan = date("i");

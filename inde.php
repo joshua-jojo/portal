@@ -67,6 +67,7 @@ if (isset($_GET["Notif"]) && !empty($_GET["Notif"])) {
   <link rel="stylesheet" href="aset/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="aset/plugins/iCheck/square/blue.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body class="hold-transition login-page " style="background-color: orange">

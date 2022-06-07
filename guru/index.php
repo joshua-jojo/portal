@@ -1,7 +1,7 @@
 <?php
 $title = 'Dashboard';
 $path = '../';
-require '../comp/header.php';
+require 'header.php';
 
 session_start();
 include "../koneksi.php";

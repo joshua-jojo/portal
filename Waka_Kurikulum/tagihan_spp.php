@@ -1,7 +1,7 @@
 <?php
 $title = 'Data Tagihan';
 $path = '../';
-require '../comp/header.php';
+require 'comp/header.php';
 
 session_start();
 include "../koneksi.php";
