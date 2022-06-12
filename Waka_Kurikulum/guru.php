@@ -102,7 +102,7 @@ include "auth_user.php";
                           </td>
                           <td class="align-middle text-center text-sm">
                             <span class="badge badge-sm bg-gradient-info">
-                              <a class="text-white open_modal" id="<?= $dosen['id_guru'] ?>" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditDosen">Edit</a>
+                              <a class="text-white open_modal" id="<?= $dosen['id_guru'] ?>" onclick="edit(<?= $dosen['id_guru'] ?>)" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditDosen">Edit</a>
                             </span>
                             <span class="badge badge-sm bg-gradient-danger">
                               <a class="text-white" href="#" onclick="confirm_delete(`dosen_delete.php?kode_guru=<?= $dosen['id_guru'] ?>`)">Delete</a>
@@ -242,27 +242,44 @@ include "auth_user.php";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
-  $(document).ready(function() {
+  // $(document).ready(function() {
 
-    // Guru
-    $(".open_modal").click(function(e) {
-      var m = $(this).attr("id");
+  //   // Guru
+  //   $(".open_modal").click(function(e) {
+  //     var m = $(this).attr("id");
 
-      $.ajax({
-        url: "api_edit_guru.php",
-        type: "GET",
-        data: {
-          kode_guru: m,
-        },
-        success: function(ajaxData) {
+  //     $.ajax({
+  //       url: "api_edit_guru.php",
+  //       type: "GET",
+  //       data: {
+  //         kode_guru: m,
+  //       },
+  //       success: function(ajaxData) {
 
-          $("#ModalEditDosen").html(ajaxData);
+  //         $("#ModalEditDosen").html(ajaxData);
 
-        }
-      });
+  //       }
+  //     });
+  //   });
+
+  // });
+
+  function edit(m) {
+
+
+    $.ajax({
+      url: "api_edit_guru.php",
+      type: "GET",
+      data: {
+        kode_guru: m,
+      },
+      success: function(ajaxData) {
+
+        $("#ModalEditDosen").html(ajaxData);
+
+      }
     });
-
-  });
+  }
 
   function confirm_delete(delete_url) {
     $("#modal_delete").modal('show', {
