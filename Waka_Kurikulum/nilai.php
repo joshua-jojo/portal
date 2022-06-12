@@ -38,7 +38,7 @@ include "auth_user.php";
                 </div>
 
                 <div class="container-fluid py-4">
-                  <form action="cetak_nilai.php" method="post">
+                  <form action="cetak_nilai.php" method="post" target="_blank">
                     <div class="form-group row">
                       <div class="col-lg-3 col-md-12 col-12 col-xs-12">
                         <select name="kelas" class="form-control">

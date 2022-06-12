@@ -35,7 +35,7 @@ include "auth_user.php";
                   </div>
                 </div>
                 <div class="container-fluid py-4">
-                  <a href="cetak_nilai.php" class="btn btn-success">Cetak</a>
+                  <a href="cetak_nilai.php" class="btn btn-success" target="_blank">Cetak</a>
                 </div>
 
                 <div class="col-12">

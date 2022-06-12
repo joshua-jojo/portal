@@ -65,7 +65,7 @@ include "auth_user.php";
                   <!-- cetak -->
                   <div class="row justify-content-between">
                     <div class="col-xl-12 col-sm-12">
-                      <form action="cetak.php" method="post">
+                      <form action="cetak.php" method="post" target="_blank">
                         <input type="text" name="namaGuru" value="<?= $_SESSION['Id_User'] ?>" hidden>
                         <div class="form-group row">
                           <div class="col-lg-3 col-md-12 col-12 col-xs-12">

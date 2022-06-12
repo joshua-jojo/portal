@@ -45,7 +45,7 @@ $daftarnilai[] = "D";
 
                     <!-- Cetak -->
                     <div class="col-xl-12 col-sm-12">
-                      <form action="cetak_nilai.php" method="post">
+                      <form action="cetak_nilai.php" method="post" target="_blank">
                         <input type="text" name="namaGuru" value="<?php echo $_SESSION['Id_User'] ?>" hidden>
                         <div class="form-group row">
                           <div class="col-lg-3 col-md-12 col-12 col-xs-12">
