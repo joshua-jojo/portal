@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2022 at 09:07 AM
+-- Generation Time: Jun 13, 2022 at 08:36 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -41,8 +41,20 @@ CREATE TABLE `absensi` (
 --
 
 INSERT INTO `absensi` (`id_absensi`, `nama_siswa`, `id_kelas`, `id_pelajaran`, `tanggal`, `status`) VALUES
+(348, 'abcd', 2, 3, '2022-06-13', 'tidak hadir'),
+(421, 'Steven Justin Saputra', 3, 3, '2022-05-10', 'izin'),
+(428, 'Steven Justin Saputra', 3, 3, '2022-05-04', 'izin'),
+(435, 'Steven Justin Saputra', 3, 3, '2022-05-02', 'hadir'),
 (1318, 'Steven Justin Saputra', 3, 2, '2022-06-07', 'izin'),
 (2657, 'Selly Marsenia', 3, 3, '2022-05-26', 'tidak hadir'),
+(3013, 'Steven Justin Saputra', 3, 3, '2022-06-13', 'izin'),
+(3052, 'afgggg', 3, 6, '2022-06-06', 'tidak hadir'),
+(3107, 'Steven Justin Saputra', 3, 2, '2022-06-08', 'hadir'),
+(3118, 'Steven Justin Saputra', 3, 3, '2022-06-10', 'tidak hadir'),
+(3130, 'Steven Justin Saputra', 3, 2, '2022-05-30', 'izin'),
+(3143, 'Steven Justin Saputra', 3, 3, '2022-06-08', 'tidak hadir'),
+(3154, 'Selly Marsenia', 3, 3, '2022-06-07', 'tidak hadir'),
+(3207, 'Steven Justin Saputra', 3, 3, '2022-06-14', 'izin'),
 (4156, 'Steven Justin Saputra', 3, 3, '2022-06-07', 'hadir');
 
 -- --------------------------------------------------------
@@ -234,7 +246,14 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_pelajaran`, `id_kelas`, `id_guru`, `jam`,
 (3213140, 2, 2, 11, '07.30 - 08.50', '1', 'https://meet.google.com/fqe-zwxb-hqn', 'Bahasa Inggris.jpeg', NULL, NULL),
 (3213141, 3, 2, 12, '10.40 - 12.00', '5', 'https://zoom', 'Sosiologi.JPG', NULL, NULL),
 (3213142, 3, 3, 12, '07.30 - 08.50', '5', 'https://meet', 'Sosiologi.JPG', NULL, NULL),
-(3213143, 2, 3, 11, '08.00-10.30', '4', 'https://teams', 'Bahasa Inggris.jpeg', NULL, NULL);
+(3213143, 2, 3, 11, '08.00-10.30', '4', 'https://teams', 'Bahasa Inggris.jpeg', NULL, NULL),
+(3213144, 9, 4, 13, '16.00 - 17.00', '3', 'https://', 'pelajaran_4_13_20220613_124010_Picture1.jpg', NULL, NULL),
+(3213145, 8, 6, 555, '07.30 - 08.50', '4', 'https://', 'pelajaran_6_555_20220613_124052_Picture1.jpg', NULL, NULL),
+(3213146, 8, 9, 1251, '10.40 - 12.00', '6', 'https://', 'pelajaran_9_1251_20220613_124212_Picture1.jpg', NULL, NULL),
+(3213147, 10, 5, 333, '16.00', '2', 'https://', 'pelajaran_5_333_20220613_124223_WhatsApp Image 2022-06-10 at 4.03.59 PM (2).jpeg', NULL, NULL),
+(3213148, 7, 8, 222, '07.30 - 08.50', '5', 'https://', 'pelajaran_8_222_20220613_124302_Picture1.jpg', NULL, NULL),
+(3213149, 10, 5, 222, '10.40 - 12.00', '2', 'https://', 'pelajaran_5_222_20220613_124312_WhatsApp Image 2022-06-10 at 4.03.59 PM (2).jpeg', NULL, NULL),
+(3213150, 5, 7, 333, '10.40 - 12.00', '5', 'https://', 'pelajaran_7_333_20220613_124325_Screenshot 2022-06-09 231838.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -333,9 +352,16 @@ CREATE TABLE `nilai` (
 --
 
 INSERT INTO `nilai` (`id_nilai`, `id_pelajaran`, `id_siswa`, `tugas_siswa`, `uts_siswa`, `uas_siswa`) VALUES
+(3223, 5, 2147483647, 79, 0, 0),
 (3602, 2, 201790, 80, 0, 0),
 (3703, 3, 43472470, 70, 0, 0),
+(3729, 5, 10101, 88, 0, 0),
 (3735, 3, 201790, 75, 0, 0),
+(3737, 11, 8878, 45, 0, 0),
+(3749, 2, 8878, 74, 0, 0),
+(3758, 2, 8878, 99, 0, 0),
+(3842, 11, 8878, 23, 0, 0),
+(3859, 11, 1515151533, 55, 0, 0),
 (5134, 2, 43472470, 98, 0, 0);
 
 -- --------------------------------------------------------
@@ -357,7 +383,15 @@ CREATE TABLE `pelajaran` (
 INSERT INTO `pelajaran` (`id_pelajaran`, `nama_pelajaran`, `materi`) VALUES
 (1, 'Fisika', 'Fisika.JPG'),
 (2, 'Bahasa Inggris', 'Bahasa Inggris.jpeg'),
-(3, 'Sosiologi', 'Sosiologi.JPG');
+(3, 'Sosiologi', 'Sosiologi.JPG'),
+(4, 'olahraga senam', 'pelajaran_2022_06_13_12_25_17_WhatsApp Image 2022-06-10 at 4.03.59 PM (2).jpeg'),
+(5, 'asd', 'pelajaran_2022_06_13_12_26_37_Picture1.jpg'),
+(6, 'reqq', 'pelajaran_2022_06_13_12_26_54_Picture1.jpg'),
+(7, 'dgdsgfg', 'pelajaran_2022_06_13_12_27_18_Screenshot 2022-06-09 231838.png'),
+(8, 'kerlrekj', 'pelajaran_2022_06_13_12_29_34_WhatsApp Image 2022-06-10 at 4.03.59 PM (2).jpeg'),
+(9, 'llkl', 'pelajaran_2022_06_13_12_29_54_Picture1.jpg'),
+(10, 'grgre', 'pelajaran_2022_06_13_12_30_02_Picture1.jpg'),
+(11, 'erqrqr', 'pelajaran_2022_06_13_12_30_08_Screenshot 2022-06-09 231838.png');
 
 -- --------------------------------------------------------
 
@@ -379,7 +413,17 @@ CREATE TABLE `pengumuman` (
 
 INSERT INTO `pengumuman` (`id_pengumuman`, `judul`, `deskripsi`, `tanggal_pembuatan`, `lampiran`) VALUES
 (324234328, 'Pengumuman Try Out', '<p><strong>Ketentuan Pendaftaran :</strong></p>\r\n\r\n<p>1. Biaya pendaftaran untuk mengikuti olimpiade ini sebesar&nbsp;Rp. 5.000, sudah termasuk Akses Olimpiade, File Soal &amp; Kunci Jawaban, 3 E-Sertifikat Nasional, dan Kesempatan Mendapatkan Beasiswa Pendidikan.</p>\r\n\r\n<p>2. Jika kamu ingin mendaftarkan diri pada lebih dari 1 Olimpiade, maka biaya pendaftaran&nbsp;berlaku kelipatan&nbsp;dan pembayaran boleh dilakukan dalam&nbsp;satu kali transfer&nbsp;saja ya. Contoh ; Mendaftar Olimpiade Kimia dan Fisika, boleh melakukan pembayaran dalam 1x (Sekaligus Rp.10.000 untuk 2 Mapel). Daftarkan di masing-masing pilihan olimpiade dan bukti pembayarannya boleh disamakan.</p>\r\n\r\n<p>3. Nama pengirim bisa di isi dengan nama kamu atau nama pemilik rekening/akun shopee/dan lainnya (menyesuaikan).</p>\r\n\r\n<p><em>Silahkan lakukan pembayaran ke salah satu metode pembayaran berikut :</em></p>\r\n\r\n<ol>\r\n	<li>SHOPEEPAY&nbsp;: 0822-1396-4471 (Atas nama UNIVERSITY ID)</li>\r\n	<li>DANA&nbsp;: 0858-7964-7349&nbsp; (Atas nama SU****AN)</li>\r\n	<li>GOPAY&nbsp;: 0858-7964-7349 (Atas nama UNIVERSITYID atau SU****AN)</li>\r\n	<li>BANK&nbsp;: 7725-0100-8236-539 ( BANK BRI - Atas nama Naufal Rizky R )</li>\r\n	<li>OVO&nbsp;: 0822-1396-4471 (Atas nama UNIVERSITYID atau SU****AN)</li>\r\n	<li>PULSA&nbsp;: 0822-1396-4471 (Telkomsel)</li>\r\n	<li>QRIS :&nbsp;<a href=\"http://bit.ly/QRIS-CODE\" target=\"_blank\">Scan Code Qris - Klik Disini</a></li>\r\n</ol>\r\n\r\n<p><em>Pengerjaan Try Out Dibuka pada :&nbsp;<strong>16 - 17 April 2022</strong></em></p>\r\n\r\n<p><em>Panduan Pelaksanaan &amp; Kisi Kisi :&nbsp;</em><a href=\"http://bit.ly/olimpiade5\" target=\"_blank\">Klik Disi Untuk Membuka</a></p>\r\n\r\n<p>Pertanyaan dapat disampaikan melalui email :<em>&nbsp;our.universityid@gmail.com</em></p>\r\n', '2022-04-15', ''),
-(324234334, 'Libur Lebaran', '<p>Yth.</p>\r\n\r\n<p><strong>Orangtua/Wali Siswa/i SMA Katolik Santo Fransiskus Assisi</strong></p>\r\n\r\n<p>Tempat</p>\r\n\r\n<p>&nbsp;&nbsp;</p>\r\n\r\n<p>Dengan hormat,</p>\r\n\r\n<p>Salam Fransiskus, Pace e Bene!</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Bersama surat ini kami sampaikan bahwa libur dalam rangka pembukaan puasa bulan Ramadhan 1443 H dimulai tanggal 1 &ndash; 2 April 2022 dan proses belajar mengajar aktif kembali tanggal 4 April 2022 secara Tatap Muka Terbatas.</p>\r\n\r\n<p>Demikian surat pemberitahuan ini kami sampaikan, semoga kita semua sehat selalu dan dalam perlindungan Tuhan Yang Maha Esa, atas perhatian dan kerja sama Bapak/Ibu Orangtua/Wali Siswa kami ucapkan terima kasih.</p>\r\n\r\n<p>Demikian surat pemberitahuan ini untuk dilaksanakan sebagaimana mestinya.</p>\r\n', '2022-03-31', 'Contoh Pengumuman.docx');
+(324234334, 'Libur Lebaran', '<p>Yth.</p>\r\n\r\n<p><strong>Orangtua/Wali Siswa/i SMA Katolik Santo Fransiskus Assisi</strong></p>\r\n\r\n<p>Tempat</p>\r\n\r\n<p>&nbsp;&nbsp;</p>\r\n\r\n<p>Dengan hormat,</p>\r\n\r\n<p>Salam Fransiskus, Pace e Bene!</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Bersama surat ini kami sampaikan bahwa libur dalam rangka pembukaan puasa bulan Ramadhan 1443 H dimulai tanggal 1 &ndash; 2 April 2022 dan proses belajar mengajar aktif kembali tanggal 4 April 2022 secara Tatap Muka Terbatas.</p>\r\n\r\n<p>Demikian surat pemberitahuan ini kami sampaikan, semoga kita semua sehat selalu dan dalam perlindungan Tuhan Yang Maha Esa, atas perhatian dan kerja sama Bapak/Ibu Orangtua/Wali Siswa kami ucapkan terima kasih.</p>\r\n\r\n<p>Demikian surat pemberitahuan ini untuk dilaksanakan sebagaimana mestinya.</p>\r\n', '2022-03-31', 'Contoh Pengumuman.docx'),
+(324234337, '123', '<p>123</p>\r\n', '0000-00-00', 'lampiran_20220613_124335_'),
+(324234338, '123', '<p>321</p>\r\n', '0000-00-00', 'lampiran_20220613_124341_'),
+(324234339, '321', '<p>551</p>\r\n', '0000-00-00', 'lampiran_20220613_124349_'),
+(324234340, '5425', '<p>435345</p>\r\n', '0000-00-00', 'lampiran_20220613_124426_'),
+(324234341, '321', '<p>321</p>\r\n', '0000-00-00', 'lampiran_20220613_124438_'),
+(324234342, '545', '<p>3453</p>\r\n', '0000-00-00', 'lampiran_20220613_124441_'),
+(324234343, '6346', '<p>6346</p>\r\n', '0000-00-00', 'lampiran_20220613_124444_'),
+(324234344, '34242', '<p>4234</p>\r\n', '0000-00-00', 'lampiran_20220613_124449_'),
+(324234345, '643', '<p>634</p>\r\n', '0000-00-00', 'lampiran_20220613_124456_'),
+(324234346, '121', '<p>1243</p>\r\n', '0000-00-00', 'lampiran_20220613_124514_');
 
 -- --------------------------------------------------------
 
@@ -404,8 +448,17 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`NIS`, `nama_siswa`, `tanggal_lahir`, `gender`, `no_hp`, `alamat`, `agama`, `kelas`, `nama_kelas`) VALUES
+(8878, 'adfg', '2022-05-31', 'P', '74', 'Jl, serdam', 'islam', 7, '777'),
+(10101, 'abc', '2022-06-07', 'P', '12314', '15155', 'katolik', 8, '888'),
 (201790, 'Steven Justin Saputra', '2005-10-11', 'L', '6282221169777', 'Jl. Ir. Sutami GG. Pusaka RT 22', 'katolik', 3, 'XII-IPS-3'),
-(43472470, 'Selly Marsenia', '2004-06-15', 'P', '085332874747', 'Asrama Putri St. Melania Jl. Tekukur No.9 Rt. 19', 'kristen', 3, 'XII-IPS-3');
+(1114444, 'Andi', '1221-12-12', 'L', '79', '79', 'buddha', 5, '555'),
+(15151515, 'Budi', '7777-01-07', 'L', '31', 'Jl, serdam', 'buddha', 5, '555'),
+(43472470, 'Selly Marsenia', '2004-06-15', 'P', '085332874747', 'Asrama Putri St. Melania Jl. Tekukur No.9 Rt. 19', 'kristen', 3, 'XII-IPS-3'),
+(86564546, 'fgssaw', '5666-12-04', 'P', '20', '525', 'buddha', 7, '777'),
+(132585858, 'afgggg', '1555-12-04', 'P', '1519', '1551515', 'islam', 7, '777'),
+(1231155155, 'Andiqtts', '1455-12-14', 'L', '1555', 'Jl Sungai raya dalam', 'hindu', 3, 'XII-IPS-3'),
+(1515151533, 'abcd', '2022-06-02', 'P', '1214', '488', 'kristen', 2, 'XII-IPS-2'),
+(2147483647, '55ytyrhgfhhg', '3323-12-23', 'L', '3223', 'Jl. Sungai Raya Dalam', 'kristen', 6, '666');
 
 -- --------------------------------------------------------
 
@@ -461,7 +514,21 @@ INSERT INTO `ujian` (`id_ujian`, `id_kelas`, `id_pelajaran`, `id_guru`, `soal`, 
 (24, '2', '3', '12', 'UAS Sosio.txt', '2022-07-04', 'UAS', '08:00', '09:30'),
 (25, '3', '3', '12', 'UAS Sosio.txt', '2022-07-05', 'UAS', '10:30', '12:00'),
 (26, '2', '2', '11', 'UTS Bing.txt', '2022-05-03', 'UTS', '08:00', '09:30'),
-(30, '3', '2', '11', 'ujian_UTS_3_2_20220607_143725_UTS BING.pdf', '2022-07-07', 'UTS', '10:00', '12:00');
+(30, '3', '2', '11', 'ujian_UTS_3_2_20220607_143725_UTS BING.pdf', '2022-07-07', 'UTS', '10:00', '12:00'),
+(31, '7', '10', '444', 'ujian_UTS_7_10_20220613_124545_Screenshot 2022-06-09 231838.png', '2344-12-31', 'UTS', '12:12', '00:12'),
+(32, '8', '10', '555', 'ujian_UAS_8_10_20220613_124618_Picture1.jpg', '4144-04-13', 'UAS', '00:12', '12:12'),
+(33, '1212', '10', '333', 'ujian_UAS_1212_10_20220613_124728_Screenshot 2022-06-09 231838.png', '0444-02-21', 'UAS', '14:42', '02:24'),
+(34, '8', '8', '222', 'ujian_UTS_8_8_20220613_124821_Picture1.jpg', '0244-12-31', 'UTS', '14:14', '00:41'),
+(35, '7', '7', '333', 'ujian_UAS_7_7_20220613_125844_Picture1.jpg', '0012-12-12', 'UAS', '00:12', '12:12'),
+(36, '3', '9', '444', 'ujian_UTS_3_9_20220613_132641_Picture1.jpg', '1444-12-14', 'UTS', '14:14', '14:55'),
+(37, '3', '1', '222', 'ujian_UAS_3_1_20220613_132718_Picture1.jpg', '2222-02-22', 'UAS', '14:14', '15:15'),
+(38, '3', '8', '222', 'ujian_UTS_3_8_20220613_132731_WhatsApp Image 2022-06-10 at 4.03.59 PM (2).jpeg', '2525-12-25', 'UTS', '16:16', '17:17'),
+(39, '3', '7', '14', 'ujian_UTS_3_7_20220613_132811_Picture1.jpg', '2022-05-31', 'UTS', '14:14', '15:15'),
+(40, '3', '8', '111', 'ujian_UAS_3_8_20220613_132829_WhatsApp Image 2022-06-10 at 4.03.59 PM (2).jpeg', '1515-12-15', 'UAS', '00:12', '01:13'),
+(41, '3', '4', '222', 'ujian_UTS_3_4_20220613_132848_WhatsApp Image 2022-06-10 at 4.03.59 PM (2).jpeg', '1666-12-15', 'UTS', '15:15', '11:06'),
+(42, '1', '1', '11', 'ujian_UTS_1_1_20220613_132931_WhatsApp Image 2022-06-10 at 4.03.59 PM (2).jpeg', '2022-05-10', 'UTS', '03:15', '15:16'),
+(43, '3', '7', '333', 'ujian_UAS_3_7_20220613_132945_Screenshot 2022-06-09 231838.png', '2022-06-09', 'UAS', '14:55', '16:06'),
+(44, '3', '2', '11', 'ujian_UAS_3_2_20220613_133059_Picture1.jpg', '2022-06-13', 'UAS', '13:12', '13:12');
 
 -- --------------------------------------------------------
 
@@ -493,7 +560,9 @@ INSERT INTO `ujian_murid` (`id_jawaban`, `id_murid`, `id_ujianjawaban`, `jawaban
 (16, 201790, '28', 'ujian__28_201790_20220602_222525_white-curved.jpeg', '2022-06-02 22:25:25', '90'),
 (17, 201790, '29', 'ujian__29_201790_20220602_222603_visa.png', '2022-06-02 22:26:03', '99'),
 (18, 43472470, '28', 'ujian__28_43472470_20220602_222701_bruce-mars.jpg', '2022-06-02 22:27:01', ''),
-(19, 43472470, '29', 'ujian__29_43472470_20220602_222723_team-3.jpg', '2022-06-02 22:27:23', '77');
+(19, 43472470, '29', 'ujian__29_43472470_20220602_222723_team-3.jpg', '2022-06-02 22:27:23', '77'),
+(20, 201790, '41', 'jawaban_UTS__41_Steven Justin Saputra_olahraga senam_20220613_133238_QnA.docx', '2022-06-13 13:32:38', ''),
+(21, 201790, '38', 'jawaban_UTS__38_Steven Justin Saputra_kerlrekj_20220613_133437_bussines plan - PPT 2.pptx', '2022-06-13 13:34:37', '');
 
 -- --------------------------------------------------------
 
@@ -517,8 +586,14 @@ INSERT INTO `users` (`id_users`, `no_role_users`, `username`, `password`, `namaa
 (1, 1, 'admin', 'admin', 'admin'),
 (11, 4, 'Kristoforus Gustian', '12345', ''),
 (12, 2, 'Rutma Parningotan', '12345', ''),
+(8878, 3, 'adfg', '12345', ''),
+(10101, 3, 'abc', '12345', ''),
 (201790, 3, 'Steven Justin Saputra', '12345', ''),
-(43472470, 3, 'Selly Marsenia', '12345', '');
+(1114444, 3, 'Andi', '12345', ''),
+(15151515, 3, 'Budi', '12345', ''),
+(43472470, 3, 'Selly Marsenia', '12345', ''),
+(86564546, 3, 'fgssaw', '12345', ''),
+(1231155155, 3, 'Andiqtts', '12345', '');
 
 --
 -- Indexes for dumped tables
@@ -661,7 +736,7 @@ ALTER TABLE `forum`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3213144;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3213151;
 
 --
 -- AUTO_INCREMENT for table `jawaban_tugas`
@@ -679,19 +754,19 @@ ALTER TABLE `kelompok_pengguna`
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id_pengumuman` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=324234337;
+  MODIFY `id_pengumuman` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=324234347;
 
 --
 -- AUTO_INCREMENT for table `ujian`
 --
 ALTER TABLE `ujian`
-  MODIFY `id_ujian` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_ujian` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `ujian_murid`
 --
 ALTER TABLE `ujian_murid`
-  MODIFY `id_jawaban` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_jawaban` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
