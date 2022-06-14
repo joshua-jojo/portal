@@ -126,7 +126,8 @@ include "auth_user.php";
                               </tr>
                               <div class="modal fade" id="ModalEdit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="ModalUjianLabel" aria-hidden="true">
                                 <form name="modal_popup" enctype="multipart/form-data" method="post">
-
+                                  <input type="text" name="editujian" value="true" hidden>
+                                  <input type="text" name="idujian" value="<?= $ujian['id_ujian'] ?>" hidden>
                                   <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                       <div class="modal-header">
@@ -385,7 +386,25 @@ if (isset($_POST['hapusujian'])) {
 
 </div>
 <?php
-if (isset($_POST['ujiansimpan'])) {
+if (!empty($_POST['editujian'])) {
+  $tipeujian            = $_POST["tipeujian"];
+  $idujian            = $_POST["idujian"];
+  $kelas          = $_POST["kelas"];
+  $guru            = $_POST["guru"];
+  $pelajaran       = $_POST["pelajaran"];
+  $ujian        = $_FILES['ujian']['name'];
+  $tanggalujian     = $_POST["tanggalujian"];
+  $waktumulai     = $_POST["waktumulai"];
+  $waktuakhir     = $_POST["waktuakhir"];
+  $file_tmp       = $_FILES['ujian']['tmp_name'];
+
+  date_default_timezone_set("Asia/Jakarta");
+  $ujian = "ujian_" . $tipeujian . "_" . $kelas . "_" . $pelajaran . "_" . date('Ymd_His_') . $ujian;
+
+  $CEK = mysqli_query($konek, "UPDATE `ujian` SET `id_kelas`='$kelas',`id_pelajaran`='$pelajaran',`id_guru`='$guru',`soal`='$ujian',`tanggalujian`='$tanggalujian',`tipeujian`='$tipeujian',`waktumulai`='$waktumulai',`waktuakhir`='$waktuakhir' WHERE id_ujian = '$idujian'");
+  move_uploaded_file($file_tmp, '../file/' . $ujian);
+  echo "<script> location.href='ujian.php'; </script>";
+} else if (isset($_POST['ujiansimpan'])) {
 
   $tipeujian            = $_POST["tipeujian"];
   $kelas          = $_POST["kelas"];
@@ -418,6 +437,8 @@ if (isset($_POST['ujiansimpan'])) {
     die("Terdapat kesalahan : " . mysqli_error($konek));
   }
 }
+
+
 ?>
 <!-- Modal Popup Plejaran Edit -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
