@@ -147,7 +147,7 @@ $format_id = $bulan . $tahun;
 
                           <td class="align-middle text-center text-sm">
                             <span class="badge badge-sm bg-gradient-info">
-                              <a class="text-white open_modal" id="<?= $absen['id_absensi'] ?>" href="#" data-bs-toggle="modal" data-bs-target="#ModalEditAbsensi">Edit</a>
+                              <a class="text-white open_modal" onclick="edit(<?= $absen['id_absensi'] ?>)" href="#" data-bs-toggle="modal" data-bs-target="#ModalEditAbsensi">Edit</a>
                             </span>
                             <span class="badge badge-sm bg-gradient-danger">
                               <a class="text-white" href="#" onclick="confirm_delete(`absensi_delete.php?id_kelas=<?= $absen['id_absensi'] ?>`)">Delete</a>
@@ -319,27 +319,21 @@ $format_id = $bulan . $tahun;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
-  $(document).ready(function() {
+  function edit(m) {
+    $.ajax({
+      url: "api_edit_absensi.php",
+      type: "GET",
+      data: {
+        id_presensi: m,
+      },
+      success: function(ajaxData) {
 
-    // Siswa
-    $(".open_modal").click(function(e) {
-      var m = $(this).attr("id");
+        console.log(ajaxData);
+        $("#ModalEditAbsensi").html(ajaxData);
 
-      $.ajax({
-        url: "api_edit_absensi.php",
-        type: "GET",
-        data: {
-          id_presensi: m,
-        },
-        success: function(ajaxData) {
-
-          console.log(ajaxData);
-          $("#ModalEditAbsensi").html(ajaxData);
-
-        }
-      });
+      }
     });
-  });
+  }
 
 
 

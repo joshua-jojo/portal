@@ -114,7 +114,7 @@ include "auth_user.php";
                           </td>
                           <td class="align-middle text-center text-sm">
                             <span class="badge badge-sm bg-gradient-info">
-                              <a class="text-white open_modal" id="<?= $siswa['NIS'] ?>" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditSiswa">Edit</a>
+                              <a class="text-white open_modal" onclick="edit(<?= $siswa['NIS'] ?>)" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditSiswa">Edit</a>
                             </span>
                             <span class="badge badge-sm bg-gradient-danger">
                               <a class="text-white" href="#" onclick="confirm_delete(`siswa_delete.php?NIS=<?= $siswa['NIS'] ?>`)">Delete</a>
@@ -293,11 +293,7 @@ include "auth_user.php";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
-  $(document).ready(function() {
-
-    // Siswa
-    $(".open_modal").click(function(e) {
-      var m = $(this).attr("id");
+function edit(m){
 
       $.ajax({
         url: "api_edit_siswa.php",
@@ -312,9 +308,7 @@ include "auth_user.php";
 
         }
       });
-    });
-  });
-
+}
 
 
   function confirm_delete(delete_url) {

@@ -182,7 +182,7 @@ include "auth_user.php";
                           } ?>
                           <td class="align-middle text-center text-sm">
                             <span class="badge badge-sm bg-gradient-info">
-                              <a class="text-white open_modal" id="<?= $nilai['id_nilai'] ?>" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditNilai">Edit</a>
+                              <a class="text-white open_modal" onclick="edit(<?= $nilai['id_nilai'] ?>)" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditNilai">Edit</a>
                             </span>
                             <span class="badge badge-sm bg-gradient-danger">
                               <a class="text-white" href="#" onclick="confirm_delete(`nilai_delete.php?kode_nilai=<?= $nilai['id_nilai'] ?>`)">Delete</a>
@@ -352,26 +352,20 @@ include "auth_user.php";
 
 
 <script type="text/javascript">
-  $(document).ready(function() {
+  function edit(m) {
+    $.ajax({
+      url: "api_edit_nilai.php",
+      type: "GET",
+      data: {
+        kode_nilai: m,
+      },
+      success: function(ajaxData) {
 
-    // Siswa
-    $(".open_modal").click(function(e) {
-      var m = $(this).attr("id");
+        $("#ModalEditNilai").html(ajaxData);
 
-      $.ajax({
-        url: "api_edit_nilai.php",
-        type: "GET",
-        data: {
-          kode_nilai: m,
-        },
-        success: function(ajaxData) {
-
-          $("#ModalEditNilai").html(ajaxData);
-
-        }
-      });
+      }
     });
-  });
+  }
 
 
 

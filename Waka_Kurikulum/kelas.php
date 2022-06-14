@@ -75,7 +75,7 @@ include "auth_user.php";
 
                           <td class="align-middle text-center text-sm">
                             <span class="badge badge-sm bg-gradient-info">
-                              <a class="text-white open_modal" id="<?= $ruangan['id_kelas'] ?>" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditKelas">Edit</a>
+                              <a class="text-white open_modal" onclick="edit(<?= $ruangan['id_kelas'] ?>)" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditKelas">Edit</a>
                             </span>
                             <span class="badge badge-sm bg-gradient-danger">
                               <a class="text-white" href="#" onclick="confirm_delete(`kelas_delete.php?id_kelas=<?= $ruangan['id_kelas'] ?>`)">Delete</a>
@@ -194,32 +194,21 @@ include "auth_user.php";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
-  $(document).ready(function() {
+  function edit(m) {
+    $.ajax({
+      url: "api_edit_kelas.php",
+      type: "GET",
+      data: {
+        id_kelas: m,
+      },
+      success: function(ajaxData) {
 
-    // Siswa
-    $(".open_modal").click(function(e) {
-      var m = $(this).attr("id");
+        console.log(ajaxData);
+        $("#ModalEditKelas").html(ajaxData);
 
-      console.log(m);
-
-
-
-
-      $.ajax({
-        url: "api_edit_kelas.php",
-        type: "GET",
-        data: {
-          id_kelas: m,
-        },
-        success: function(ajaxData) {
-
-          console.log(ajaxData);
-          $("#ModalEditKelas").html(ajaxData);
-
-        }
-      });
+      }
     });
-  });
+  }
 
 
 

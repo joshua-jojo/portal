@@ -83,7 +83,7 @@ include "auth_user.php";
                           </td>
                           <td class="align-middle text-center text-sm">
                             <span class="badge badge-sm bg-gradient-info">
-                              <a class="text-white open_modal" id="<?= $pelajaran['id_pelajaran'] ?>" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditPelajaran">Edit</a>
+                              <a class="text-white open_modal" onclick="edit(<?= $pelajaran['id_pelajaran'] ?>)" href="#>" data-bs-toggle="modal" data-bs-target="#ModalEditPelajaran">Edit</a>
                             </span>
                             <span class="badge badge-sm bg-gradient-danger">
                               <a class="text-white" href="#" onclick="confirm_delete(`pelajaran_delete.php?id_pelajaran=<?= $pelajaran['id_pelajaran'] ?>`)">Delete</a>
@@ -208,16 +208,8 @@ include "auth_user.php";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
-  $(document).ready(function() {
-
-    // Siswa
-    $(".open_modal").click(function(e) {
-      var m = $(this).attr("id");
-
-      console.log(m);
-
-
-      $.ajax({
+function edit(m){
+  $.ajax({
         url: "api_edit_pelajaran.php",
         type: "GET",
         data: {
@@ -229,8 +221,7 @@ include "auth_user.php";
 
         }
       });
-    });
-  });
+}
 
 
 
