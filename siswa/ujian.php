@@ -120,7 +120,7 @@ include "auth_user.php";
                                     endwhile;
                                   } else { ?>
                                     <span class="badge badge-sm bg-gradient-info">
-                                      <a class="text-white open_modal_uts" id="<?= $ujian['id_ujian'] ?>" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">UPLOAD <?= $ujian['tipeujian'] ?></a>
+                                      <a class="text-white open_modal_uts" onclick="edit(<?= $ujian['id_ujian'] ?>)" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">UPLOAD <?= $ujian['tipeujian'] ?></a>
                                     </span>
                                     <br>
                                     <span class="text-xs font-weight-bold">
@@ -177,12 +177,8 @@ include "auth_user.php";
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
-  $(document).ready(function() {
-
-    // Siswa
-    $(".open_modal_uts").click(function(e) {
-      var m = $(this).attr("id")
-      $.ajax({
+function edit(m){
+  $.ajax({
         url: "api_upload_ujian.php",
         type: "GET",
         data: {
@@ -195,8 +191,6 @@ include "auth_user.php";
           })
         }
       })
-
-    })
-  });
+}
 </script>
 <?php require '../comp/footer.php' ?>
