@@ -35,7 +35,6 @@ include "auth_user.php";
                 </div>
 
                 <div class="container-fluid py-4">
-                  <!-- cari -->
                   <div class="row justify-content-between">
                     <div class="col-xl-12 col-sm-12">
                       <form action="" method="post">
@@ -63,7 +62,6 @@ include "auth_user.php";
                       </form>
                     </div>
                   </div>
-                  <!-- cetak -->
                   <div class="row justify-content-between">
                     <div class="col-xl-12 col-sm-12">
                       <form action="cetak_absensi.php" method="post" target="_blank">
@@ -107,6 +105,76 @@ include "auth_user.php";
 
                   <div class="table-responsive">
                     <table id="tabel" class="table align-items-center mb-3">
+                      <?php
+                      if (empty($_POST['pelajaran'])) {
+                      ?>
+                        <thead>
+                          <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Absen</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama Siswa</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kode Kelas</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pelajaran</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tanggal</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                            <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th> -->
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php
+                          $querydosen = mysqli_query($konek, "SELECT * FROM absensi inner join kelas on absensi.id_kelas = kelas.id_kelas inner join pelajaran on absensi.id_pelajaran = pelajaran.id_pelajaran ORDER BY nama_siswa");
+                          if ($querydosen == false) {
+                            die("Terjadi Kesalahan : " . mysqli_error($konek));
+                          }
+                          ?>
+
+                          <?php while ($absen = mysqli_fetch_array($querydosen)) : ?>
+                            <tr>
+                              <td class="align-middle text-sm">
+                                <span class="text-secondary text-xs font-weight-bolds">
+                                  <?= $absen['id_absensi'] ?>
+                                </span>
+                              </td>
+                              <td class="align-middle text-sm">
+                                <span class="text-secondary text-xs font-weight-bolds">
+                                  <?= $absen['nama_siswa'] ?>
+                                </span>
+                              </td>
+                              <td class="align-middle text-sm">
+                                <span class="text-secondary text-xs font-weight-bolds">
+                                  <?= $absen['nama_kelas'] ?>
+                                </span>
+                              </td>
+                              <td class="align-middle text-sm">
+                                <span class="text-secondary text-xs font-weight-bolds">
+                                  <?= $absen['nama_pelajaran'] ?>
+                                </span>
+                              </td>
+                              <td class="align-middle text-sm">
+                                <span class="text-secondary text-xs font-weight-bolds">
+                                  <?= $absen['tanggal'] ?>
+                                </span>
+                              </td>
+                              <td class="align-middle text-sm">
+                                <span class="badge badge-sm bg-gradient-warning text-white">
+                                  <?= $absen['status'] ?>
+                                </span>
+                              </td>
+
+                              <!-- <td class="align-middle text-center text-sm">
+                                <span class="badge badge-sm bg-gradient-info">
+                                  <a class="text-white open_modal" onclick="edit(<?= $absen['id_absensi'] ?>)" href="#" data-bs-toggle="modal" data-bs-target="#ModalEditAbsensi">Edit</a>
+                                </span>
+                                <span class="badge badge-sm bg-gradient-danger">
+                                  <a class="text-white" href="#" onclick="confirm_delete(`absensi_delete.php?id_kelas=<?= $absen['id_absensi'] ?>`)">Delete</a>
+                                </span>
+                              </td> -->
+                            </tr>
+                          <?php endwhile; ?>
+
+                        </tbody>
+                      <?php
+                      }
+                      ?>
 
                       <?php
                       if (!empty($_POST['pelajaran'])) {
@@ -180,8 +248,7 @@ include "auth_user.php";
                           endwhile; ?>
 
                         </tbody>
-                        <?php
-                        ?>
+
 
                         <!-- get -->
                       <?php
@@ -263,86 +330,7 @@ include "auth_user.php";
 
 
                   </div>
-                  <?php
-                  if (empty($_POST['pelajaran'])) {
-                  ?>
-                    <div class="table-responsive">
-                      <table id="tabel" class="table align-items-center mb-3">
 
-
-                        <thead>
-                          <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Absen</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama Siswa</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kode Kelas</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pelajaran</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tanggal</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
-                            <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th> -->
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php
-                          $querydosen = mysqli_query($konek, "SELECT * FROM absensi inner join kelas on absensi.id_kelas = kelas.id_kelas inner join pelajaran on absensi.id_pelajaran = pelajaran.id_pelajaran ORDER BY nama_siswa");
-                          if ($querydosen == false) {
-                            die("Terjadi Kesalahan : " . mysqli_error($konek));
-                          }
-                          ?>
-
-                          <?php while ($absen = mysqli_fetch_array($querydosen)) : ?>
-                            <tr>
-                              <td class="align-middle text-sm">
-                                <span class="text-secondary text-xs font-weight-bolds">
-                                  <?= $absen['id_absensi'] ?>
-                                </span>
-                              </td>
-                              <td class="align-middle text-sm">
-                                <span class="text-secondary text-xs font-weight-bolds">
-                                  <?= $absen['nama_siswa'] ?>
-                                </span>
-                              </td>
-                              <td class="align-middle text-sm">
-                                <span class="text-secondary text-xs font-weight-bolds">
-                                  <?= $absen['nama_kelas'] ?>
-                                </span>
-                              </td>
-                              <td class="align-middle text-sm">
-                                <span class="text-secondary text-xs font-weight-bolds">
-                                  <?= $absen['nama_pelajaran'] ?>
-                                </span>
-                              </td>
-                              <td class="align-middle text-sm">
-                                <span class="text-secondary text-xs font-weight-bolds">
-                                  <?= $absen['tanggal'] ?>
-                                </span>
-                              </td>
-                              <td class="align-middle text-sm">
-                                <span class="badge badge-sm bg-gradient-warning text-white">
-                                  <?= $absen['status'] ?>
-                                </span>
-                              </td>
-
-                              <!-- <td class="align-middle text-center text-sm">
-                                <span class="badge badge-sm bg-gradient-info">
-                                  <a class="text-white open_modal" onclick="edit(<?= $absen['id_absensi'] ?>)" href="#" data-bs-toggle="modal" data-bs-target="#ModalEditAbsensi">Edit</a>
-                                </span>
-                                <span class="badge badge-sm bg-gradient-danger">
-                                  <a class="text-white" href="#" onclick="confirm_delete(`absensi_delete.php?id_kelas=<?= $absen['id_absensi'] ?>`)">Delete</a>
-                                </span>
-                              </td> -->
-                            </tr>
-                          <?php endwhile; ?>
-
-                        </tbody>
-
-
-                      </table>
-
-                    </div>
-
-                  <?php
-                  }
-                  ?>
                 </div>
               </div>
             </div>
